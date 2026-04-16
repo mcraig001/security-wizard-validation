@@ -2,13 +2,16 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Find the Right Home Security Setup in 5 Minutes",
+  title: "SafeNest — Home Security Guidance for Older Adults",
   description:
-    "Built for seniors and their families. No technical knowledge required. Get a personalized home security recommendation instantly.",
+    "Answer 3 questions and get a personalized home security recommendation. Designed for adults 65+ and their families. No sales calls. No pushy installers.",
+  icons: {
+    icon: "/favicon.svg",
+  },
   openGraph: {
-    title: "Find the Right Home Security Setup in 5 Minutes",
+    title: "SafeNest — Home Security Guidance for Older Adults",
     description:
-      "Built for seniors and their families. No technical knowledge required.",
+      "Answer 3 questions and get a personalized home security recommendation. No sales calls. No pushy installers.",
     type: "website",
   },
 };

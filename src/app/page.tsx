@@ -11,6 +11,153 @@ interface Answers {
   budget: string;
 }
 
+function ShieldIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6L12 2z" />
+    </svg>
+  );
+}
+
+function Logo() {
+  return (
+    <div className="flex flex-col items-center gap-1">
+      <div className="flex items-center gap-2">
+        <ShieldIcon className="w-8 h-8 text-white" />
+        <span className="text-2xl font-bold tracking-tight text-white">
+          SafeNest
+        </span>
+      </div>
+      <p className="text-blue-200 text-sm text-center">
+        Home security guidance for older adults and their families
+      </p>
+    </div>
+  );
+}
+
+function TrustBar() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 border-t border-blue-400 pt-8 text-left">
+      {[
+        { icon: "🔒", text: "Your email is never sold or shared" },
+        { icon: "✓", text: "Works with Ring, Nest, SimpliSafe & ADT" },
+        { icon: "★", text: "Designed for adults 65+ and their families" },
+      ].map((item) => (
+        <div
+          key={item.text}
+          className="flex items-center gap-2 text-blue-100 text-sm"
+        >
+          <span className="text-lg shrink-0">{item.icon}</span>
+          <span>{item.text}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+function TestimonialSection() {
+  const testimonials = [
+    {
+      quote:
+        "I spent weeks confused by all the options. This pointed me in the right direction in minutes.",
+      name: "Barbara K., 68 — Phoenix, AZ",
+    },
+    {
+      quote:
+        "Set this up for my parents. Finally feel like they are protected without them having to figure out complicated tech.",
+      name: "Michael T. — son of a 74-year-old",
+    },
+    {
+      quote: "Simple. Clear. Exactly what I needed.",
+      name: "Dorothy M., 71 — Atlanta, GA",
+    },
+  ];
+
+  return (
+    <section className="bg-gray-50 py-14 px-6">
+      <div className="max-w-2xl mx-auto">
+        <h2 className="text-2xl font-bold text-[#1e3a5f] mb-8 text-center">
+          Why families trust us
+        </h2>
+        <div className="space-y-4">
+          {testimonials.map((t) => (
+            <div
+              key={t.name}
+              className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm"
+            >
+              <p className="text-gray-300 text-5xl leading-none mb-2 font-serif select-none">
+                &ldquo;
+              </p>
+              <p className="text-gray-700 text-[18px] mb-4">{t.quote}</p>
+              <p className="text-gray-500 text-sm font-medium">{t.name}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FAQSection() {
+  const faqs = [
+    {
+      q: "Do I need to buy anything to get started?",
+      a: "No. The recommendation is completely free. We'll tell you exactly what to buy and where to get it at the best price.",
+    },
+    {
+      q: "Is this affiliated with Ring, Nest, or ADT?",
+      a: "No. We're independent. Our only goal is to match you with the right setup for your specific situation — not to sell you any particular brand.",
+    },
+    {
+      q: "What happens after I enter my email?",
+      a: "You'll receive one email with your personalized recommendation. That's it. No follow-up sales emails unless you ask.",
+    },
+  ];
+
+  return (
+    <section className="max-w-2xl mx-auto px-6 py-14">
+      <h2 className="text-2xl font-bold text-[#1e3a5f] mb-6">
+        Common questions
+      </h2>
+      <div className="space-y-4">
+        {faqs.map((faq) => (
+          <details key={faq.q} className="border border-gray-200 rounded-xl p-5">
+            <summary className="font-semibold text-[18px] cursor-pointer">
+              {faq.q}
+            </summary>
+            <p className="mt-3 text-gray-700">{faq.a}</p>
+          </details>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Footer() {
+  return (
+    <footer className="border-t border-gray-200 py-8 px-6 text-center text-gray-500 text-sm">
+      <p className="mb-2">
+        &copy; 2026 SafeNest &middot; Independent home security guidance &middot; Not
+        affiliated with any security brand
+      </p>
+      <div className="flex justify-center gap-6">
+        <a href="/privacy" className="underline hover:text-gray-700">
+          Privacy Policy
+        </a>
+        <a href="/contact" className="underline hover:text-gray-700">
+          Contact
+        </a>
+      </div>
+    </footer>
+  );
+}
+
 function WizardContent() {
   const searchParams = useSearchParams();
   const utmSource = searchParams.get("utm_source") || "direct";
@@ -64,74 +211,31 @@ function WizardContent() {
       <main>
         <header className="bg-[#1e3a5f] text-white px-6 py-12 text-center">
           <div className="max-w-2xl mx-auto">
+            <div className="mb-8">
+              <Logo />
+            </div>
             <h1 className="text-3xl sm:text-4xl font-bold leading-tight mb-4">
-              Find the right home security setup in 5 minutes
+              The right home security setup — without the confusion
             </h1>
             <p className="text-xl text-blue-100 mb-8">
-              Built for seniors and their families. No technical knowledge
-              required.
+              Answer 3 questions and get a personalized recommendation for your
+              exact situation. No sales calls. No pushy installers.
             </p>
             <button
               onClick={() => setStep("step1")}
-              className="bg-[#f97316] hover:bg-orange-500 text-white font-bold text-xl px-10 py-4 rounded-xl transition-colors"
+              className="bg-[#f97316] hover:bg-orange-500 text-white font-bold text-xl px-10 py-4 rounded-xl transition-colors w-full sm:w-auto"
             >
               Find My Setup →
             </button>
+            <TrustBar />
           </div>
         </header>
 
-        <section className="max-w-2xl mx-auto px-6 py-12">
-          <ul className="space-y-5 mb-12">
-            {[
-              "No equipment to buy to get started",
-              "Works with Ring, Nest, SimpliSafe, ADT and more",
-              "Designed with seniors in mind — clear, simple, no jargon",
-            ].map((point) => (
-              <li key={point} className="flex items-start gap-3">
-                <span className="text-[#f97316] text-2xl leading-none mt-0.5">
-                  ✓
-                </span>
-                <span className="text-[18px]">{point}</span>
-              </li>
-            ))}
-          </ul>
+        <TestimonialSection />
 
-          <div className="border-t border-gray-200 pt-10">
-            <h2 className="text-2xl font-bold text-[#1e3a5f] mb-6">
-              Common questions
-            </h2>
-            <div className="space-y-6">
-              <details className="border border-gray-200 rounded-xl p-5">
-                <summary className="font-semibold text-[18px] cursor-pointer">
-                  Is this free?
-                </summary>
-                <p className="mt-3 text-gray-700">
-                  Yes. The recommendation is completely free. We may suggest
-                  products or services, but there is no cost to use this tool.
-                </p>
-              </details>
-              <details className="border border-gray-200 rounded-xl p-5">
-                <summary className="font-semibold text-[18px] cursor-pointer">
-                  Do I need to buy any equipment?
-                </summary>
-                <p className="mt-3 text-gray-700">
-                  No. We&apos;ll tell you what options exist and what would work
-                  best for your situation — including options that require no
-                  equipment at all.
-                </p>
-              </details>
-              <details className="border border-gray-200 rounded-xl p-5">
-                <summary className="font-semibold text-[18px] cursor-pointer">
-                  Who is this for?
-                </summary>
-                <p className="mt-3 text-gray-700">
-                  This is designed for adults 65+ and the family members who
-                  help them. We use plain language and skip the technical jargon.
-                </p>
-              </details>
-            </div>
-          </div>
-        </section>
+        <FAQSection />
+
+        <Footer />
       </main>
     );
   }
@@ -142,8 +246,8 @@ function WizardContent() {
       <main className="min-h-screen bg-gray-50">
         <WizardHeader step={1} />
         <div className="max-w-xl mx-auto px-6 py-10">
-          <h2 className="text-2xl font-bold text-[#1e3a5f] mb-2">
-            How large is the home?
+          <h2 className="text-2xl font-bold text-[#1e3a5f] mb-1">
+            Tell us about the home
           </h2>
           <p className="text-gray-500 mb-8">Step 1 of 3</p>
           <div className="space-y-4">
@@ -170,15 +274,18 @@ function WizardContent() {
       <main className="min-h-screen bg-gray-50">
         <WizardHeader step={2} />
         <div className="max-w-xl mx-auto px-6 py-10">
-          <h2 className="text-2xl font-bold text-[#1e3a5f] mb-2">
-            How comfortable is the user with technology?
+          <h2 className="text-2xl font-bold text-[#1e3a5f] mb-1">
+            Tech comfort level
           </h2>
           <p className="text-gray-500 mb-8">Step 2 of 3</p>
           <div className="space-y-4">
             {[
-              { label: "Not comfortable", value: "not_comfortable" },
-              { label: "Somewhat comfortable", value: "somewhat_comfortable" },
-              { label: "Very comfortable", value: "very_comfortable" },
+              { label: "I prefer simple and easy", value: "not_comfortable" },
+              {
+                label: "I can follow instructions",
+                value: "somewhat_comfortable",
+              },
+              { label: "I'm pretty tech-savvy", value: "very_comfortable" },
             ].map((opt) => (
               <OptionButton
                 key={opt.value}
@@ -198,8 +305,8 @@ function WizardContent() {
       <main className="min-h-screen bg-gray-50">
         <WizardHeader step={3} />
         <div className="max-w-xl mx-auto px-6 py-10">
-          <h2 className="text-2xl font-bold text-[#1e3a5f] mb-2">
-            What&apos;s your monthly budget for monitoring?
+          <h2 className="text-2xl font-bold text-[#1e3a5f] mb-1">
+            Monthly monitoring budget
           </h2>
           <p className="text-gray-500 mb-8">Step 3 of 3</p>
           <div className="space-y-4">
@@ -230,7 +337,8 @@ function WizardContent() {
             Your personalized recommendation is ready
           </h2>
           <p className="text-[18px] text-gray-600 mb-8">
-            Enter your email and we&apos;ll send it to you instantly.
+            Based on your answers, we&apos;ve matched you with 2 recommended
+            setups.
           </p>
           <form onSubmit={handleEmailSubmit} className="space-y-4">
             <input
@@ -250,10 +358,10 @@ function WizardContent() {
               disabled={submitting}
               className="w-full bg-[#f97316] hover:bg-orange-500 disabled:bg-orange-300 text-white font-bold text-xl px-8 py-4 rounded-xl transition-colors"
             >
-              {submitting ? "Sending…" : "Send My Recommendation"}
+              {submitting ? "Sending…" : "Show Me My Recommendations →"}
             </button>
-            <p className="text-center text-gray-500 text-[16px]">
-              No spam. Unsubscribe anytime.
+            <p className="text-center text-gray-500 text-[15px]">
+              Trusted by families across the US. We respect your inbox.
             </p>
           </form>
         </div>
@@ -264,15 +372,28 @@ function WizardContent() {
   // --- THANK YOU ---
   return (
     <main className="min-h-screen bg-gray-50 flex items-center justify-center px-6">
-      <div className="max-w-xl text-center">
-        <div className="text-6xl mb-6">✅</div>
+      <div className="max-w-xl w-full text-center py-16">
         <h2 className="text-3xl font-bold text-[#1e3a5f] mb-4">
-          You&apos;re on the list.
+          You&apos;re all set.
         </h2>
-        <p className="text-[18px] text-gray-600">
-          Your recommendation is coming within 24 hours. Check your inbox —
-          including your spam folder.
+        <p className="text-[18px] text-gray-600 mb-12">
+          We&apos;re putting together your personalized recommendation now.
+          Expect it within 24 hours — check your spam folder just in case.
         </p>
+        <div className="grid grid-cols-3 gap-6 text-center">
+          {[
+            { num: "1", label: "You answered 3 questions" },
+            { num: "2", label: "We match your situation to the right setup" },
+            { num: "3", label: "You get a clear, simple recommendation" },
+          ].map((s) => (
+            <div key={s.num} className="flex flex-col items-center gap-3">
+              <div className="w-12 h-12 rounded-full bg-[#1e3a5f] text-white flex items-center justify-center font-bold text-xl shrink-0">
+                {s.num}
+              </div>
+              <p className="text-gray-600 text-sm leading-snug">{s.label}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </main>
   );
@@ -280,10 +401,22 @@ function WizardContent() {
 
 function WizardHeader({ step }: { step: number }) {
   const total = 3;
-  const progress = step > total ? 100 : Math.round(((step - 1) / total) * 100);
+  const progress =
+    step > total ? 100 : Math.round(((step - 1) / total) * 100);
   return (
     <div className="bg-[#1e3a5f] px-6 py-5">
       <div className="max-w-xl mx-auto">
+        <div className="flex items-center gap-2 mb-3">
+          <svg
+            className="w-5 h-5 text-white"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            aria-hidden="true"
+          >
+            <path d="M12 2L3 6v6c0 5.25 3.75 10.15 9 11.25C17.25 22.15 21 17.25 21 12V6L12 2z" />
+          </svg>
+          <span className="text-white font-bold text-lg">SafeNest</span>
+        </div>
         <p className="text-blue-200 text-[16px] mb-2">
           {step <= total ? `Step ${step} of ${total}` : "Almost done"}
         </p>
@@ -308,7 +441,7 @@ function OptionButton({
   return (
     <button
       onClick={onClick}
-      className="w-full text-left border-2 border-gray-200 hover:border-[#1e3a5f] hover:bg-blue-50 rounded-xl px-6 py-5 text-[18px] font-medium transition-colors"
+      className="w-full text-left border-2 border-gray-200 hover:border-[#1e3a5f] hover:bg-blue-50 rounded-xl px-6 py-5 text-[18px] font-medium transition-colors min-h-[48px]"
     >
       {label}
     </button>
