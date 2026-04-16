@@ -43,20 +43,27 @@ function Logo() {
 
 function TrustBar() {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8 border-t border-blue-400 pt-8 text-left">
-      {[
-        { icon: "🔒", text: "Your email is never sold or shared" },
-        { icon: "✓", text: "Works with Ring, Nest, SimpliSafe & ADT" },
-        { icon: "★", text: "Designed for adults 65+ and their families" },
-      ].map((item) => (
-        <div
-          key={item.text}
-          className="flex items-center gap-2 text-blue-100 text-sm"
-        >
-          <span className="text-lg shrink-0">{item.icon}</span>
-          <span>{item.text}</span>
-        </div>
-      ))}
+    <div className="mt-8 border-t border-blue-400 pt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left">
+        {[
+          { icon: "🔒", text: "Your email is never sold or shared" },
+          { icon: "✓", text: "Works with Ring, Nest, SimpliSafe & ADT" },
+          { icon: "★", text: "Designed for adults 65+ and their families" },
+        ].map((item) => (
+          <div
+            key={item.text}
+            className="flex items-center gap-2 text-blue-100 text-sm"
+          >
+            <span className="text-lg shrink-0">{item.icon}</span>
+            <span>{item.text}</span>
+          </div>
+        ))}
+      </div>
+      <p className="text-blue-300 text-xs mt-4 text-center">
+        Ring, Nest, SimpliSafe, and ADT are trademarks of their respective
+        owners. SafeNest is not affiliated with, endorsed by, or sponsored by
+        any security brand.
+      </p>
     </div>
   );
 }
@@ -99,6 +106,9 @@ function TestimonialSection() {
             </div>
           ))}
         </div>
+        <p className="text-gray-400 text-xs mt-6 text-center">
+          Testimonials are illustrative examples. Individual results may vary.
+        </p>
       </div>
     </section>
   );
@@ -112,7 +122,7 @@ function FAQSection() {
     },
     {
       q: "Is this affiliated with Ring, Nest, or ADT?",
-      a: "No. We're independent. Our only goal is to match you with the right setup for your specific situation — not to sell you any particular brand.",
+      a: "No. We're independent. SafeNest is not affiliated with, endorsed by, or sponsored by any security brand. Our only goal is to match you with the right setup for your specific situation.",
     },
     {
       q: "What happens after I enter my email?",
@@ -142,13 +152,20 @@ function FAQSection() {
 function Footer() {
   return (
     <footer className="border-t border-gray-200 py-8 px-6 text-center text-gray-500 text-sm">
-      <p className="mb-2">
-        &copy; 2026 SafeNest &middot; Independent home security guidance &middot; Not
-        affiliated with any security brand
+      <p className="mb-1">
+        &copy; 2026 SafeNest &middot; Operated by Auriflow Digital LLC (Wyoming)
+      </p>
+      <p className="mb-3 text-xs text-gray-400">
+        SafeNest may earn commissions on recommended products. We are not
+        affiliated with any security brand. Brand names are trademarks of their
+        respective owners.
       </p>
       <div className="flex justify-center gap-6">
         <a href="/privacy" className="underline hover:text-gray-700">
           Privacy Policy
+        </a>
+        <a href="/terms" className="underline hover:text-gray-700">
+          Terms of Use
         </a>
         <a href="/contact" className="underline hover:text-gray-700">
           Contact
@@ -362,6 +379,13 @@ function WizardContent() {
             </button>
             <p className="text-center text-gray-500 text-[15px]">
               Trusted by families across the US. We respect your inbox.
+            </p>
+            <p className="text-center text-gray-400 leading-snug" style={{ fontSize: "11px" }}>
+              By submitting your email you agree to our{" "}
+              <a href="/privacy" className="underline">
+                Privacy Policy
+              </a>
+              . US residents: we do not sell your data. Unsubscribe anytime.
             </p>
           </form>
         </div>
