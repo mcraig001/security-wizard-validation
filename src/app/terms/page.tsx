@@ -1,120 +1,39 @@
-export default function Terms() {
+export const metadata = {
+  title: 'Terms of Service | SafeNest',
+};
+
+export default function TermsPage() {
   return (
-    <main className="max-w-2xl mx-auto px-6 py-16">
-      <a href="/" className="text-[#1e3a5f] text-sm mb-8 block hover:underline">
-        ← Back to SafeNest
-      </a>
+    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '48px 24px' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: 800, color: '#1e3a5f', marginBottom: '8px' }}>Terms of Service</h1>
+      <p style={{ color: '#9ca3af', fontSize: '14px', marginBottom: '40px' }}>Last updated: April 2025</p>
 
-      <h1 className="text-3xl font-bold text-[#1e3a5f] mb-2">Terms of Use</h1>
-      <p className="text-gray-500 text-sm mb-10">Last updated: April 15, 2026</p>
+      <div style={{ lineHeight: 1.8, color: '#374151', fontSize: '16px' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>1. Acceptance</h2>
+        <p>By using SafeNest, you agree to these Terms. SafeNest is operated by Auriflow Digital LLC (&quot;we,&quot; &quot;us,&quot; &quot;our&quot;).</p>
 
-      <p className="text-gray-700 mb-8">
-        SafeNest is operated by Auriflow Digital LLC, a Wyoming limited liability
-        company.
-      </p>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>2. Service Description</h2>
+        <p>SafeNest provides AI-generated home security recommendations for informational purposes only. Recommendations are based on the information you provide and are not a substitute for professional security assessments.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Acceptance
-        </h2>
-        <p className="text-gray-700">
-          By using this site you agree to these terms. If you do not agree, do
-          not use the site.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>3. Affiliate Links</h2>
+        <p>SafeNest participates in the Amazon Associates Program and other affiliate programs. Product links in recommendations and blog posts may be affiliate links. We earn a commission on qualifying purchases at no additional cost to you. Our recommendations are based on quality and fit for our audience, not commission rates.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Free Tool
-        </h2>
-        <p className="text-gray-700">
-          The SafeNest recommendation wizard is provided free of charge. We
-          reserve the right to discontinue or modify the service at any time.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>4. Premium Subscription</h2>
+        <p>SafeNest Premium is billed monthly ($9/month) or annually ($79/year). Subscriptions automatically renew until cancelled. You may cancel at any time through your account or by emailing support. Refunds are provided on a case-by-case basis at our discretion. Subscription management is handled by Stripe.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Recommendations Are Informational Only
-        </h2>
-        <p className="text-gray-700">
-          The recommendations provided by SafeNest are for informational
-          purposes only. They do not constitute professional security advice.
-          You are solely responsible for any purchasing or installation
-          decisions you make.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>5. Disclaimer</h2>
+        <p>SafeNest recommendations are provided &quot;as is&quot; without warranty of any kind. We do not guarantee that any security setup will prevent theft, break-ins, or other incidents. Product availability, pricing, and features are subject to change without notice.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          No Warranty
-        </h2>
-        <p className="text-gray-700">
-          This site is provided &ldquo;as is&rdquo; without warranty of any
-          kind. Auriflow Digital LLC makes no guarantees regarding the accuracy,
-          completeness, or fitness for a particular purpose of any
-          recommendation.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>6. Limitation of Liability</h2>
+        <p>To the maximum extent permitted by law, Auriflow Digital LLC shall not be liable for any indirect, incidental, or consequential damages arising from your use of SafeNest or any product purchased based on our recommendations.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Limitation of Liability
-        </h2>
-        <p className="text-gray-700">
-          To the fullest extent permitted by law, Auriflow Digital LLC shall not
-          be liable for any indirect, incidental, or consequential damages
-          arising from your use of this site.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>7. Governing Law</h2>
+        <p>These Terms are governed by the laws of the State of Wyoming.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Brand Names
-        </h2>
-        <p className="text-gray-700">
-          All third-party brand names mentioned on this site (including Ring,
-          Nest, SimpliSafe, and ADT) are trademarks of their respective owners.
-          SafeNest is not affiliated with, endorsed by, or sponsored by any of
-          these companies.
-        </p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Affiliate Disclosure
-        </h2>
-        <p className="text-gray-700">
-          SafeNest may earn a commission if you purchase products through links
-          on this site. This does not affect our recommendations.
-        </p>
-      </section>
-
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Governing Law
-        </h2>
-        <p className="text-gray-700">
-          These terms are governed by the laws of the State of Wyoming, United
-          States.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">Contact</h2>
-        <p className="text-gray-700">
-          Auriflow Digital LLC
-          <br />
-          Wyoming, United States
-          <br />
-          <a
-            href="mailto:hello@safenestguide.com"
-            className="text-[#1e3a5f] underline"
-          >
-            hello@safenestguide.com
-          </a>
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>8. Contact</h2>
+        <p>Auriflow Digital LLC · Wyoming<br />
+        Email: <a href="mailto:support@safenestguide.com" style={{ color: '#1e3a5f' }}>support@safenestguide.com</a></p>
+      </div>
     </main>
   );
 }

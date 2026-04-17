@@ -1,123 +1,47 @@
-export default function Privacy() {
+export const metadata = {
+  title: 'Privacy Policy | SafeNest',
+};
+
+export default function PrivacyPage() {
   return (
-    <main className="max-w-2xl mx-auto px-6 py-16">
-      <a href="/" className="text-[#1e3a5f] text-sm mb-8 block hover:underline">
-        ← Back to SafeNest
-      </a>
+    <main style={{ maxWidth: '720px', margin: '0 auto', padding: '48px 24px' }}>
+      <h1 style={{ fontSize: '32px', fontWeight: 800, color: '#1e3a5f', marginBottom: '8px' }}>Privacy Policy</h1>
+      <p style={{ color: '#9ca3af', fontSize: '14px', marginBottom: '40px' }}>Last updated: April 2025</p>
 
-      <h1 className="text-3xl font-bold text-[#1e3a5f] mb-2">Privacy Policy</h1>
-      <p className="text-gray-500 text-sm mb-10">Last updated: April 15, 2026</p>
+      <div style={{ lineHeight: 1.8, color: '#374151', fontSize: '16px' }}>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>Who We Are</h2>
+        <p>SafeNest is operated by Auriflow Digital LLC, a Wyoming company. We provide personalized home security recommendations for adults 65+ and their families.</p>
 
-      <p className="text-gray-700 mb-8">
-        SafeNest is operated by Auriflow Digital LLC, a Wyoming limited liability
-        company.
-      </p>
-
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Information We Collect
-        </h2>
-        <p className="text-gray-700 mb-3">
-          When you use our recommendation wizard, we collect:
-        </p>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
-          <li>
-            Your answers to our 3 assessment questions (home size, technology
-            comfort, budget)
-          </li>
-          <li>Your email address, if you choose to provide it</li>
-          <li>
-            The source of your visit (e.g. Reddit, Facebook) via URL parameter
-          </li>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>What We Collect</h2>
+        <p>When you use our recommendation quiz, we collect:</p>
+        <ul style={{ paddingLeft: '24px', marginTop: '8px' }}>
+          <li>Your home size, technology comfort level, and monitoring budget (to generate your recommendation)</li>
+          <li>Your email address (if you choose to receive your recommendation by email)</li>
+          <li>Source of visit (e.g., direct, Reddit, Facebook) for analytics</li>
         </ul>
-      </section>
+        <p style={{ marginTop: '12px' }}>If you subscribe to SafeNest Premium, we collect payment information processed securely by Stripe. We never see or store your full card number.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          How We Use Your Information
-        </h2>
-        <p className="text-gray-700 mb-3">
-          We use the information you provide solely to:
-        </p>
-        <ul className="list-disc list-inside text-gray-700 space-y-1">
-          <li>Send you your personalized home security recommendation</li>
-          <li>
-            Improve our recommendation tool based on aggregated, anonymized
-            response patterns
-          </li>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>How We Use Your Data</h2>
+        <ul style={{ paddingLeft: '24px' }}>
+          <li>To generate and deliver your personalized security recommendation</li>
+          <li>To send monthly security tips and product updates (Premium subscribers)</li>
+          <li>To improve our recommendation engine</li>
+          <li>We never sell your data to third parties</li>
         </ul>
-        <p className="text-gray-700 mt-3">
-          We do not sell, rent, or share your personal information with any
-          third party for marketing purposes.
-        </p>
-      </section>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Email Communications
-        </h2>
-        <p className="text-gray-700">
-          If you provide your email address, you will receive one email
-          containing your personalized recommendation. You may receive
-          occasional product updates from SafeNest. You can unsubscribe at any
-          time by clicking the unsubscribe link in any email.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>Affiliate Disclosure</h2>
+        <p>SafeNest participates in the Amazon Associates Program. When you click a product link and make a purchase on Amazon, we earn a small commission at no additional cost to you. This never influences our recommendations — we only recommend products we believe are genuinely good for our audience.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Data Storage
-        </h2>
-        <p className="text-gray-700">
-          Your information is stored securely using Supabase, a SOC 2 compliant
-          database provider. We retain your data for up to 12 months.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>Cookies</h2>
+        <p>We use minimal, session-only cookies necessary to operate the site. We do not use tracking cookies or third-party advertising cookies.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">Cookies</h2>
-        <p className="text-gray-700">
-          This site does not use tracking cookies or third-party advertising
-          pixels.
-        </p>
-      </section>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>Your Rights</h2>
+        <p>You may request deletion of your data at any time by emailing <a href="mailto:support@safenestguide.com" style={{ color: '#1e3a5f' }}>support@safenestguide.com</a>. We will process your request within 30 days.</p>
 
-      <section className="mb-8">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">
-          Your Rights
-        </h2>
-        <p className="text-gray-700">
-          You may request deletion of your data at any time by emailing{" "}
-          <a
-            href="mailto:hello@safenestguide.com"
-            className="text-[#1e3a5f] underline"
-          >
-            hello@safenestguide.com
-          </a>
-          . We will respond within 30 days.
-        </p>
-      </section>
-
-      <section className="mb-12">
-        <h2 className="text-xl font-semibold text-[#1e3a5f] mb-3">Contact</h2>
-        <p className="text-gray-700">
-          Auriflow Digital LLC
-          <br />
-          Wyoming, United States
-          <br />
-          <a
-            href="mailto:hello@safenestguide.com"
-            className="text-[#1e3a5f] underline"
-          >
-            hello@safenestguide.com
-          </a>
-        </p>
-      </section>
-
-      <p className="text-gray-400 text-xs border-t border-gray-100 pt-6">
-        SafeNest is operated by Auriflow Digital LLC. Shield icon drawn from
-        scratch — no third-party icon library used.
-      </p>
+        <h2 style={{ fontSize: '20px', fontWeight: 700, color: '#1e3a5f', marginTop: '32px', marginBottom: '8px' }}>Contact</h2>
+        <p>Auriflow Digital LLC · Wyoming<br />
+        Email: <a href="mailto:support@safenestguide.com" style={{ color: '#1e3a5f' }}>support@safenestguide.com</a></p>
+      </div>
     </main>
   );
 }
